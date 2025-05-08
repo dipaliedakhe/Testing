@@ -7,5 +7,5 @@ WORKDIR /app
 # Copy the JAR file
 COPY target/PointerListener.jar app.jar
 
-# Run the JAR file
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Run the JAR file and allow env vars like BIND_IP
+ENTRYPOINT ["sh", "-c", "java -jar app.jar"]
